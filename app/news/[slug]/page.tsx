@@ -8,6 +8,22 @@ import { generateSEOMetadata } from '@/components/SEO';
 import type { Metadata } from 'next';
 
 /**
+ * Generate dynamic heading based on source URL
+ */
+function getSourceHeading(url: string | null): string | null {
+  if (!url) return null;
+
+  const lower = url.toLowerCase();
+
+  if (lower.endsWith('.pdf')) return 'OFFICIAL NOTICE PDF';
+  if (lower.includes('cbse.gov.in')) return 'OFFICIAL CBSE NOTICE';
+  if (lower.includes('nta.ac.in')) return 'OFFICIAL NTA NOTICE';
+  if (lower.includes('nic.in')) return 'GOVERNMENT CIRCULAR';
+
+  return 'OFFICIAL WEBSITE';
+}
+
+/**
  * Generate dynamic button label based on source URL
  */
 function getSourceButtonLabel(url: string | null): string | null {
@@ -16,12 +32,11 @@ function getSourceButtonLabel(url: string | null): string | null {
   const lower = url.toLowerCase();
 
   if (lower.endsWith('.pdf')) return 'Download Official PDF';
-  if (lower.includes('circular')) return 'View Official Circular';
-  if (lower.includes('notice')) return 'View Official Notice';
-  if (lower.includes('notification')) return 'View Notification';
-  if (lower.includes('gov.in') || lower.includes('nic.in')) return 'Visit Official Website';
+  if (lower.includes('cbse.gov.in') || lower.includes('nta.ac.in') || lower.includes('nic.in')) {
+    return 'View Official Circular';
+  }
 
-  return 'View Official Source';
+  return 'Visit Official Website';
 }
 
 interface PageProps {
@@ -147,35 +162,33 @@ export default async function NewsDetailPage({ params }: PageProps) {
           />
 
           {/* Source Link */}
-          {news.source_link && getSourceButtonLabel(news.source_link) && (
+          {news.source_link && getSourceHeading(news.source_link) && (
             <div className="mt-12 pt-8 border-t border-gray-200 dark:border-white/10">
-              <div className="bg-gray-50 dark:bg-[#1f1f1f] rounded-lg border border-gray-200 dark:border-white/10 p-4">
-                <p className="text-xs font-semibold text-gray-500 dark:text-[#9ca3af] uppercase tracking-wide mb-3">
-                  Official Reference
-                </p>
-                <a
-                  href={news.source_link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-blue-600 text-white px-6 py-3.5 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm shadow-sm hover:shadow-md"
+              <p className="text-xs font-semibold text-gray-500 dark:text-[#9ca3af] uppercase tracking-wide mb-3">
+                {getSourceHeading(news.source_link)}
+              </p>
+              <a
+                href={news.source_link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-blue-600 text-white px-6 py-3.5 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm shadow-sm hover:shadow-md"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                  {getSourceButtonLabel(news.source_link)}
-                </a>
-              </div>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+                {getSourceButtonLabel(news.source_link)}
+              </a>
             </div>
           )}
 
