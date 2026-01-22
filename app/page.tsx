@@ -63,22 +63,22 @@ export default async function HomePage({ searchParams }: HomePageProps) {
             </div>
           </div>
           {/* Subheading */}
-          <p className="text-sm md:text-base text-gray-600 dark:text-[#d1d5db] leading-relaxed">
+          <p className="text-sm md:text-base text-gray-600 dark:text-slate-300 leading-relaxed">
             Official CBSE updates, exam notifications, results, admissions and student guidance — updated daily.
           </p>
         </div>
 
         {result.data.length === 0 ? (
-          <div className="bg-white dark:bg-[#1f1f1f] rounded-xl shadow-sm dark:shadow-none border border-gray-200 dark:border-white/10 p-16 text-center transition-colors duration-300">
-            <p className="text-gray-500 dark:text-[#d1d5db] text-lg">No news articles available at the moment.</p>
-            <p className="text-gray-400 dark:text-[#9ca3af] mt-2">Check back soon for updates!</p>
+          <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm dark:shadow-none border border-gray-200 dark:border-slate-800 p-16 text-center transition-colors duration-300">
+            <p className="text-gray-500 dark:text-slate-300 text-lg">No news articles available at the moment.</p>
+            <p className="text-gray-400 dark:text-slate-400 mt-2">Check back soon for updates!</p>
           </div>
         ) : (
           <>
             {/* News Cards List */}
             <div className="space-y-2.5">
-              {result.data.map((item) => (
-                <NewsListItem key={item.id} news={item} />
+              {result.data.map((item, index) => (
+                <NewsListItem key={item.id} news={item} priority={index < 3} />
               ))}
             </div>
 

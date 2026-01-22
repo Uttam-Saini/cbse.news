@@ -28,7 +28,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white dark:bg-[#1f1f1f] shadow-sm dark:shadow-none sticky top-0 z-50 transition-colors duration-300 border-b border-gray-200 dark:border-white/10">
+    <header className="bg-white dark:bg-slate-950 shadow-sm dark:shadow-none sticky top-0 z-50 transition-colors duration-300 border-b border-gray-200 dark:border-slate-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-4">
           {/* Logo */}
@@ -41,7 +41,7 @@ export default function Header() {
           <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-xl mx-8 ml-10">
             <div className="relative w-full">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search className="h-5 w-5 text-gray-400 dark:text-[#9ca3af]" />
+                <Search className="h-5 w-5 text-gray-400 dark:text-slate-400" />
               </div>
               <input
                 type="text"
@@ -49,7 +49,7 @@ export default function Header() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Search news, topics, exams..."
-                className="w-full h-10 pl-10 pr-4 rounded-full bg-gray-100 dark:bg-[#2a2a2a] border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors duration-200"
+                className="w-full h-10 pl-10 pr-4 rounded-full bg-gray-100 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors duration-200"
               />
             </div>
           </form>
@@ -58,16 +58,16 @@ export default function Header() {
           <div className="flex items-center gap-6">
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-gray-700 dark:text-[#d1d5db] hover:text-primary-600 dark:hover:text-blue-400 font-medium transition-colors text-sm hover:underline">
+              <Link href="/" className="text-gray-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-blue-300 font-medium transition-colors text-sm hover:underline">
                 Home
               </Link>
-              <Link href="/category/Notice" className="text-gray-700 dark:text-[#d1d5db] hover:text-primary-600 dark:hover:text-blue-400 font-medium transition-colors text-sm hover:underline">
+              <Link href="/category/Notice" className="text-gray-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-blue-300 font-medium transition-colors text-sm hover:underline">
                 Notices
               </Link>
-              <Link href="/category/Results" className="text-gray-700 dark:text-[#d1d5db] hover:text-primary-600 dark:hover:text-blue-400 font-medium transition-colors text-sm hover:underline">
+              <Link href="/category/Results" className="text-gray-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-blue-300 font-medium transition-colors text-sm hover:underline">
                 Results
               </Link>
-              <Link href="/admin/login" className="text-gray-700 dark:text-[#d1d5db] hover:text-primary-600 dark:hover:text-blue-400 font-medium transition-colors text-sm hover:underline">
+              <Link href="/admin/login" className="text-gray-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-blue-300 font-medium transition-colors text-sm hover:underline">
                 Admin
               </Link>
             </nav>
@@ -78,7 +78,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden text-gray-700 dark:text-[#d1d5db] hover:text-primary-600 dark:hover:text-blue-400 transition"
+              className="md:hidden text-gray-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-blue-300 transition"
               aria-label="Toggle menu"
             >
             <svg
@@ -102,33 +102,33 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 dark:border-white/10 pt-4">
+          <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 dark:border-slate-800 pt-4">
             <div className="flex flex-col space-y-3">
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-gray-700 dark:text-[#d1d5db] hover:text-primary-600 dark:hover:text-blue-400 transition py-2"
+                className="text-gray-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-blue-300 transition py-2"
               >
                 Home
               </Link>
               <Link
                 href="/category/Notice"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-gray-700 dark:text-[#d1d5db] hover:text-primary-600 dark:hover:text-blue-400 transition py-2"
+                className="text-gray-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-blue-300 transition py-2"
               >
                 Notices
               </Link>
               <Link
                 href="/category/Results"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-gray-700 dark:text-[#d1d5db] hover:text-primary-600 dark:hover:text-blue-400 transition py-2"
+                className="text-gray-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-blue-300 transition py-2"
               >
                 Results
               </Link>
               <Link
                 href="/admin/login"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-gray-700 dark:text-[#d1d5db] hover:text-primary-600 dark:hover:text-blue-400 transition py-2"
+                className="text-gray-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-blue-300 transition py-2"
               >
                 Admin
               </Link>

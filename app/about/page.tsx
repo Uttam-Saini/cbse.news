@@ -14,20 +14,22 @@ export default function AboutPage() {
             About CBSE.News
           </h1>
           
-          <div className="prose prose-lg prose-slate dark:prose-invert max-w-none">
-            <p className="text-base md:text-lg leading-relaxed text-gray-700 dark:text-[#d1d5db] mb-6">
+          <div className="prose prose-lg prose-slate dark:prose-invert max-w-none 
+            prose-p:text-gray-700 dark:prose-p:text-slate-300
+            prose-strong:text-gray-900 dark:prose-strong:text-white">
+            <p className="text-base md:text-lg leading-relaxed text-gray-700 dark:text-slate-300 mb-6">
               CBSE.News is an independent education news platform providing educational updates, exam news, results, and important announcements for students, teachers, and parents.
             </p>
             
-            <p className="text-base md:text-lg leading-relaxed text-gray-700 dark:text-[#d1d5db] mb-6">
+            <p className="text-base md:text-lg leading-relaxed text-gray-700 dark:text-slate-300 mb-6">
               Our mission is to make education-related information easily accessible, accurate, and timely for everyone in the academic community.
             </p>
             
-            <div className="mt-8 pt-8 border-t border-gray-200 dark:border-white/10">
-              <p className="text-base leading-relaxed text-gray-700 dark:text-[#d1d5db]">
+            <div className="mt-8 pt-8 border-t border-gray-200 dark:border-slate-800">
+              <p className="text-base leading-relaxed text-gray-700 dark:text-slate-300">
                 This platform is built and maintained by <strong className="text-gray-900 dark:text-white">Uttam Saini</strong>, MERN Developer at Nodia Learning Private Limited.
               </p>
-              <p className="text-base leading-relaxed text-gray-700 dark:text-[#d1d5db] mt-4">
+              <p className="text-base leading-relaxed text-gray-700 dark:text-slate-300 mt-4">
                 The website is developed for <strong className="text-gray-900 dark:text-white">Nodia Learning Private Limited</strong>, with full credit given to Uttam Saini for design and development.
               </p>
             </div>

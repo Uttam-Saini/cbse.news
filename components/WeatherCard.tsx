@@ -100,7 +100,7 @@ export default function WeatherCard({ compact = false }: WeatherCardProps) {
 
   if (compact) {
     return (
-      <div className="bg-white dark:bg-[#1f1f1f] rounded-lg border border-gray-200 dark:border-white/10 p-3 transition-all duration-300 hover:bg-gray-50 dark:hover:bg-[#242424]">
+      <div className="bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800 p-3 transition-all duration-300 hover:bg-gray-50 dark:hover:bg-slate-800 shadow-sm dark:shadow-none">
         <div className="flex items-center gap-2.5">
           {/* Weather Info */}
           <div className="flex flex-col justify-center min-w-0">
@@ -111,7 +111,7 @@ export default function WeatherCard({ compact = false }: WeatherCardProps) {
               <span className="text-lg font-bold tracking-tight text-gray-900 dark:text-white leading-none">
                 {weather.temp}
               </span>
-              <span className="text-xs font-medium text-gray-600 dark:text-[#9ca3af] leading-none">
+              <span className="text-xs font-medium text-gray-600 dark:text-slate-400 leading-none">
                 °C
               </span>
             </div>
@@ -126,7 +126,7 @@ export default function WeatherCard({ compact = false }: WeatherCardProps) {
   }
 
   return (
-    <div className="bg-white dark:bg-[#1f1f1f] rounded-lg border border-gray-200 dark:border-white/10 p-5 transition-all duration-300 hover:bg-gray-50 dark:hover:bg-[#242424] w-full sm:w-auto">
+    <div className="bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800 p-5 transition-all duration-300 hover:bg-gray-50 dark:hover:bg-slate-800 shadow-sm dark:shadow-none w-full sm:w-auto">
       <div className="flex items-center gap-4">
         {/* Weather Info - Left Side */}
         <div className="flex-1 min-w-0 flex flex-col justify-center">
@@ -140,13 +140,13 @@ export default function WeatherCard({ compact = false }: WeatherCardProps) {
             <span className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-white leading-none">
               {weather.temp}
             </span>
-            <span className="text-xl sm:text-2xl font-semibold text-gray-600 dark:text-[#9ca3af] leading-none">
+            <span className="text-xl sm:text-2xl font-semibold text-gray-600 dark:text-slate-400 leading-none">
               °C
             </span>
           </div>
           
           {/* Weather Condition */}
-          <p className="text-sm leading-relaxed text-gray-600 dark:text-[#d1d5db] capitalize">
+          <p className="text-sm leading-relaxed text-gray-600 dark:text-slate-300 capitalize">
             {weather.description}
           </p>
         </div>

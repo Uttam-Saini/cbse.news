@@ -19,6 +19,17 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/* Remove gradient in dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: rgb(var(--background-start-rgb));
+  }
+}
+
+.dark body {
+  background: rgb(var(--background-start-rgb));
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

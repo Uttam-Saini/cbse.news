@@ -28,11 +28,11 @@ export default function ContactPage() {
             Contact Us
           </h1>
           
-          <p className="text-base md:text-lg text-gray-600 dark:text-[#d1d5db] mb-8 leading-relaxed">
+          <p className="text-base md:text-lg text-gray-600 dark:text-slate-300 mb-8 leading-relaxed">
             Have a question, suggestion, or feedback? Reach out to us using the form below.
           </p>
 
-          <div className="bg-white dark:bg-[#1f1f1f] rounded-xl border border-gray-200 dark:border-white/10 p-8 shadow-sm">
+          <div className="bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 p-8 shadow-sm dark:shadow-none">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-white mb-2">
@@ -44,7 +44,7 @@ export default function ContactPage() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-white/20 rounded-lg bg-white dark:bg-[#2d2d2d] text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-950 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors"
                   placeholder="Your name"
                 />
               </div>
@@ -59,7 +59,7 @@ export default function ContactPage() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-white/20 rounded-lg bg-white dark:bg-[#2d2d2d] text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-950 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -74,7 +74,7 @@ export default function ContactPage() {
                   rows={6}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-white/20 rounded-lg bg-white dark:bg-[#2d2d2d] text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors resize-none"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-950 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors resize-none"
                   placeholder="Your message..."
                 />
               </div>
@@ -88,14 +88,14 @@ export default function ContactPage() {
             </form>
 
             {submitted && (
-              <div className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-400 rounded-lg text-sm">
+              <div className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-slate-800 text-green-700 dark:text-green-400 rounded-lg text-sm">
                 Thank you for your message! We'll get back to you soon.
               </div>
             )}
           </div>
 
           <div className="mt-8 text-center">
-            <p className="text-base text-gray-600 dark:text-[#d1d5db] mb-2">
+            <p className="text-base text-gray-600 dark:text-slate-300 mb-2">
               Or reach us directly at:
             </p>
             <a

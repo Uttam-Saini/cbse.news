@@ -66,7 +66,7 @@ export default function Pagination({
   return (
     <div className="flex flex-col items-center justify-center gap-4 mt-8 py-6">
       {/* Page info */}
-      <div className="text-sm text-gray-600 dark:text-[#9ca3af]">
+      <div className="text-sm text-gray-600 dark:text-slate-400">
         Page {currentPage} of {totalPages}
       </div>
 
@@ -76,13 +76,13 @@ export default function Pagination({
         {previousPage ? (
           <Link
             href={getPageUrl(previousPage)}
-            className="px-3 sm:px-4 py-2 border border-gray-300 dark:border-white/20 rounded-lg text-gray-700 dark:text-[#d1d5db] hover:bg-gray-50 dark:hover:bg-[#242424] hover:border-blue-500 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm sm:text-base"
+            className="px-3 sm:px-4 py-2 border border-gray-300 dark:border-slate-800 rounded-lg text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 hover:border-blue-500 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-300 transition-colors text-sm sm:text-base"
           >
             <span className="hidden sm:inline">Previous</span>
             <span className="sm:hidden">Prev</span>
           </Link>
         ) : (
-          <span className="px-3 sm:px-4 py-2 border border-gray-300 dark:border-white/20 rounded-lg text-gray-400 dark:text-[#6b7280] cursor-not-allowed bg-gray-50 dark:bg-[#1f1f1f] text-sm sm:text-base">
+          <span className="px-3 sm:px-4 py-2 border border-gray-300 dark:border-slate-800 rounded-lg text-gray-400 dark:text-slate-500 cursor-not-allowed bg-gray-50 dark:bg-slate-900 text-sm sm:text-base">
             <span className="hidden sm:inline">Previous</span>
             <span className="sm:hidden">Prev</span>
           </span>
@@ -95,7 +95,7 @@ export default function Pagination({
               return (
                 <span
                   key={`ellipsis-${index}`}
-                  className="px-2 text-gray-400 dark:text-[#9ca3af] text-sm sm:text-base"
+                  className="px-2 text-gray-400 dark:text-slate-400 text-sm sm:text-base"
                 >
                   ...
                 </span>
@@ -112,7 +112,7 @@ export default function Pagination({
                 className={`px-3 sm:px-4 py-2 border rounded-lg transition-colors text-sm sm:text-base ${
                   isActive
                     ? 'bg-blue-600 text-white border-blue-600 font-semibold'
-                    : 'border-gray-300 dark:border-white/20 text-gray-700 dark:text-[#d1d5db] hover:bg-gray-50 dark:hover:bg-[#242424] hover:border-blue-500 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400'
+                    : 'border-gray-300 dark:border-slate-800 text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 hover:border-blue-500 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-300'
                 }`}
                 aria-current={isActive ? 'page' : undefined}
               >
@@ -126,12 +126,12 @@ export default function Pagination({
         {nextPage ? (
           <Link
             href={getPageUrl(nextPage)}
-            className="px-3 sm:px-4 py-2 border border-gray-300 dark:border-white/20 rounded-lg text-gray-700 dark:text-[#d1d5db] hover:bg-gray-50 dark:hover:bg-[#242424] hover:border-blue-500 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm sm:text-base"
+            className="px-3 sm:px-4 py-2 border border-gray-300 dark:border-slate-800 rounded-lg text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 hover:border-blue-500 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-300 transition-colors text-sm sm:text-base"
           >
             Next
           </Link>
         ) : (
-          <span className="px-3 sm:px-4 py-2 border border-gray-300 dark:border-white/20 rounded-lg text-gray-400 dark:text-[#6b7280] cursor-not-allowed bg-gray-50 dark:bg-[#1f1f1f] text-sm sm:text-base">
+          <span className="px-3 sm:px-4 py-2 border border-gray-300 dark:border-slate-800 rounded-lg text-gray-400 dark:text-slate-500 cursor-not-allowed bg-gray-50 dark:bg-slate-900 text-sm sm:text-base">
             Next
           </span>
         )}
