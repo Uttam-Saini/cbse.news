@@ -32,10 +32,11 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-4">
           {/* Logo */}
-          <Link href="/" className="text-xl sm:text-2xl font-bold text-primary-600 dark:text-blue-400 hover:text-primary-700 dark:hover:text-blue-300 transition-colors -ml-10
-">
-            CBSE.News
-          </Link>
+          <div className="flex-shrink-0">
+            <Link href="/" className="text-xl sm:text-2xl font-bold text-primary-600 dark:text-blue-400 hover:text-primary-700 dark:hover:text-blue-300 transition-colors whitespace-nowrap">
+              CBSE.News
+            </Link>
+          </div>
           
           {/* Search Bar - Desktop Only */}
           <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-xl mx-8 ml-10">
@@ -55,7 +56,7 @@ export default function Header() {
           </form>
           
           {/* Right Side: Navigation, Theme Toggle, Mobile Menu */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 sm:gap-6 flex-shrink-0">
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               <Link href="/" className="text-gray-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-blue-300 font-medium transition-colors text-sm hover:underline">
