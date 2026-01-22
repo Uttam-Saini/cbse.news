@@ -76,7 +76,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         ) : (
           <>
             {/* News Cards List */}
-            <div className="space-y-4">
+            <div className="space-y-2.5">
               {result.data.map((item) => (
                 <NewsListItem key={item.id} news={item} />
               ))}

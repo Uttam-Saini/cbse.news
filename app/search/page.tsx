@@ -75,7 +75,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             <p className="text-gray-400 dark:text-[#9ca3af] mt-2">Try different keywords or check your spelling.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {results.map((item) => (
               <NewsCard key={item.id} news={item} />
             ))}
