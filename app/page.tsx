@@ -1,7 +1,6 @@
 import { getPublishedNewsPaginated } from '@/lib/utils/news';
 import NewsListItem from '@/components/NewsListItem';
 import Pagination from '@/components/Pagination';
-import WeatherCard from '@/components/WeatherCard';
 import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
@@ -54,18 +53,16 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         <div className="mb-10">
           {/* Heading and Weather Card Row */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-3">
-            <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">
-              Education News Hub
-            </h1>
+            
             {/* Compact Weather Card */}
-            <div className="flex-shrink-0">
+            {/* <div className="flex-shrink-0">
               <WeatherCard compact />
-            </div>
+            </div> */}
           </div>
           {/* Subheading */}
-          <p className="text-sm md:text-base text-gray-600 dark:text-slate-300 leading-relaxed">
+          {/* <p className="text-sm md:text-base text-gray-600 dark:text-slate-300 leading-relaxed">
             Official CBSE updates, exam notifications, results, admissions and student guidance — updated daily.
-          </p>
+          </p> */}
         </div>
 
         {result.data.length === 0 ? (
