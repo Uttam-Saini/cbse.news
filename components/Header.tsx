@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Search } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -55,7 +54,7 @@ export default function Header() {
             </div>
           </form>
           
-          {/* Right Side: Navigation, Theme Toggle, Mobile Menu */}
+          {/* Right Side: Navigation and Mobile Menu */}
           <div className="flex items-center gap-4 sm:gap-6 flex-shrink-0">
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
@@ -72,9 +71,6 @@ export default function Header() {
                 Admin
               </Link>
             </nav>
-
-            {/* Theme Toggle */}
-            <ThemeToggle />
 
             {/* Mobile Menu Button */}
             <button

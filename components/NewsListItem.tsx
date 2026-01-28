@@ -28,7 +28,7 @@ export default function NewsListItem({ news, priority = false }: NewsListItemPro
   return (
     <Link href={`/news/${news.slug}`}>
       <article className="bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 overflow-hidden hover:bg-gray-50 dark:hover:bg-slate-800 shadow-sm dark:shadow-none transition-all duration-200 cursor-pointer group">
-        <div className="flex flex-col sm:flex-row gap-3 p-3">
+        <div className="flex flex-row items-center sm:items-stretch gap-3 p-3">
           {/* Left side: Featured image */}
           {news.image_url && (
             <div className="flex-shrink-0 w-[120px] h-[90px] sm:w-[160px] sm:h-[120px]">
