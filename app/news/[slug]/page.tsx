@@ -114,39 +114,27 @@ export default async function NewsDetailPage({ params }: PageProps) {
   };
 
   return (
-    <div className="bg-white dark:bg-slate-900 min-h-screen transition-colors duration-300">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="bg-white min-h-screen transition-colors duration-300">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Back Button */}
-        <div className="max-w-3xl mx-auto mb-8">
+        <div className="max-w-3xl mx-auto mb-4">
           <Link
             href="/"
-            className="inline-flex items-center text-sm text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-300 transition-colors mb-8"
+            className="inline-flex items-center text-xs text-gray-600 hover:text-blue-600 transition-colors"
           >
-            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3 h-3 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Back to Home
+            Back
           </Link>
         </div>
 
-        {/* Article Container with Smart Layout */}
-        <article className="max-w-3xl mx-auto bg-white dark:bg-slate-950 rounded-xl p-8 md:p-12 shadow-sm dark:shadow-none border border-gray-200 dark:border-slate-800 transition-colors duration-300">
+        {/* Article Container with Smart Layout (no card wrapper) */}
+        <article className="max-w-3xl mx-auto">
           {renderLayout()}
-
-          {/* Footer Navigation */}
-          <div className="mt-16 pt-8 border-t border-gray-200 dark:border-slate-800">
-            <Link
-              href="/"
-              className="inline-flex items-center text-sm text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-medium"
-            >
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              Back to Home
-            </Link>
-          </div>
         </article>
       </div>
     </div>
   );
 }
+  

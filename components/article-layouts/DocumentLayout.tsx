@@ -24,15 +24,8 @@ export default function DocumentLayout({
     <>
       {/* Article Header */}
       <header className="mb-6">
-        {/* Category Badge */}
-        <div className="mb-4">
-          <span className="inline-block px-3 py-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-xs uppercase tracking-wide font-semibold">
-            {news.category}
-          </span>
-        </div>
-
         {/* Title */}
-        <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-4 leading-tight">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 leading-tight">
           {news.title}
         </h1>
 

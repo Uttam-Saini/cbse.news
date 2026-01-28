@@ -10,24 +10,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-/* Remove gradient in dark mode */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: rgb(var(--background-start-rgb));
-  }
-}
-
-.dark body {
   background: rgb(var(--background-start-rgb));
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 @layer utilities {

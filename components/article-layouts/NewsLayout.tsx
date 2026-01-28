@@ -23,16 +23,9 @@ export default function NewsLayout({
   return (
     <>
       {/* Article Header */}
-      <header className="mb-10">
-        {/* Category Badge */}
-        <div className="mb-6">
-          <span className="inline-block px-3 py-1.5 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-blue-400 rounded-full text-xs uppercase tracking-wide font-semibold">
-            {news.category}
-          </span>
-        </div>
-
+      <header className="mb-6">
         {/* Title */}
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 leading-tight">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 leading-tight">
           {news.title}
         </h1>
 

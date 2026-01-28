@@ -23,16 +23,9 @@ export default function NoticeLayout({
   return (
     <>
       {/* Article Header */}
-      <header className="mb-8">
-        {/* Category Badge - More prominent for notices */}
-        <div className="mb-4">
-          <span className="inline-block px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 rounded-full text-xs uppercase tracking-wide font-bold">
-            {news.category}
-          </span>
-        </div>
-
+      <header className="mb-6">
         {/* Title */}
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-4 leading-tight">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 leading-tight">
           {news.title}
         </h1>
 
