@@ -25,7 +25,7 @@ export default function NoticeLayout({
       {/* Article Header */}
       <header className="mb-6">
         {/* Title */}
-        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 leading-tight">
+        <h1 className="text-lg md:text-2xl lg:text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 leading-tight">
           {news.title}
         </h1>
 
