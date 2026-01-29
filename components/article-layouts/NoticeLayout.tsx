@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { format } from 'date-fns';
-import Link from 'next/link';
 import type { News } from '@/lib/database.types';
 
 interface NoticeLayoutProps {
@@ -39,37 +38,6 @@ export default function NoticeLayout({
         </div>
       </header>
 
-      {/* Source Link - Prominent placement for notices */}
-      {news.source_link && getSourceHeading(news.source_link) && (
-        <div className="mb-8 p-4 bg-blue-50 dark:bg-slate-900 border-l-4 border-blue-600 dark:border-blue-400 rounded-r-lg border dark:border-slate-800">
-          <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 uppercase tracking-wide mb-2">
-            {getSourceHeading(news.source_link)}
-          </p>
-          <a
-            href={news.source_link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm"
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-              />
-            </svg>
-            {getSourceButtonLabel(news.source_link)}
-          </a>
-        </div>
-      )}
-
       {/* Featured Image - Compact for notices */}
       {news.image_url && (
         <div className="relative w-full max-w-2xl mx-auto aspect-[4/3] mb-8 rounded-xl overflow-hidden bg-gray-100 dark:bg-slate-950 shadow-md dark:shadow-none">
@@ -99,6 +67,37 @@ export default function NoticeLayout({
           prose-img:rounded-lg prose-img:shadow-sm dark:prose-img:opacity-90"
         dangerouslySetInnerHTML={{ __html: news.content.replace(/\n/g, '<br />') }}
       />
+
+      {/* View Official Circular - after full notice content */}
+      {news.source_link && getSourceHeading(news.source_link) && (
+        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-slate-800">
+          <p className="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+            {getSourceHeading(news.source_link)}
+          </p>
+          <a
+            href={news.source_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-blue-600 text-white px-6 py-3.5 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm shadow-sm hover:shadow-md"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+            {getSourceButtonLabel(news.source_link)}
+          </a>
+        </div>
+      )}
     </>
   );
 }
