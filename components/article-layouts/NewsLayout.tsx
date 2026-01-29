@@ -43,7 +43,7 @@ export default function NewsLayout({
 
       {/* Featured Image - Landscape optimized */}
       {news.image_url && (
-        <div className="relative w-full aspect-video mb-12 rounded-2xl overflow-hidden bg-gray-100 dark:bg-slate-950 shadow-lg dark:shadow-none">
+        <div className="relative w-full aspect-video mb-8 rounded-2xl overflow-hidden bg-gray-100 dark:bg-slate-950 shadow-lg dark:shadow-none">
           <Image
             src={news.image_url}
             alt={news.title}
@@ -55,28 +55,9 @@ export default function NewsLayout({
         </div>
       )}
 
-      {/* Article Content */}
-      <div
-        className="prose prose-lg prose-slate dark:prose-invert max-w-none 
-          prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-gray-900 dark:prose-headings:text-white
-          prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
-          prose-p:text-base md:prose-p:text-lg prose-p:leading-relaxed prose-p:text-gray-700 dark:prose-p:text-slate-300
-          prose-p:mb-6
-          prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
-          prose-strong:text-gray-900 dark:prose-strong:text-white
-          prose-ul:my-6 prose-ol:my-6
-          prose-li:my-2 prose-li:text-gray-700 dark:prose-li:text-slate-300
-          prose-blockquote:border-l-4 prose-blockquote:border-blue-500 dark:prose-blockquote:border-blue-400 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-700 dark:prose-blockquote:text-slate-300
-          prose-img:rounded-xl prose-img:shadow-md dark:prose-img:opacity-90"
-        dangerouslySetInnerHTML={{ __html: news.content.replace(/\n/g, '<br />') }}
-      />
-
-      {/* Source Link */}
+      {/* Official link - directly below featured image */}
       {news.source_link && getSourceHeading(news.source_link) && (
-        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-slate-800">
-          <p className="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wide mb-3">
-            {getSourceHeading(news.source_link)}
-          </p>
+        <div className="mb-8">
           <a
             href={news.source_link}
             target="_blank"
@@ -101,6 +82,22 @@ export default function NewsLayout({
           </a>
         </div>
       )}
+
+      {/* Article Content */}
+      <div
+        className="prose prose-lg prose-slate dark:prose-invert max-w-none 
+          prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-gray-900 dark:prose-headings:text-white
+          prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
+          prose-p:text-base md:prose-p:text-lg prose-p:leading-relaxed prose-p:text-gray-700 dark:prose-p:text-slate-300
+          prose-p:mb-6
+          prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-gray-900 dark:prose-strong:text-white
+          prose-ul:my-6 prose-ol:my-6
+          prose-li:my-2 prose-li:text-gray-700 dark:prose-li:text-slate-300
+          prose-blockquote:border-l-4 prose-blockquote:border-blue-500 dark:prose-blockquote:border-blue-400 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-700 dark:prose-blockquote:text-slate-300
+          prose-img:rounded-xl prose-img:shadow-md dark:prose-img:opacity-90"
+        dangerouslySetInnerHTML={{ __html: news.content.replace(/\n/g, '<br />') }}
+      />
     </>
   );
 }

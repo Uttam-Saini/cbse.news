@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+/** Cache GET responses for 10 minutes */
+export const revalidate = 600;
+
 // Simple in-memory cache with timestamp
 const cache = new Map<string, { data: any; timestamp: number }>();
 const CACHE_DURATION = 10 * 60 * 1000; // 10 minutes in milliseconds

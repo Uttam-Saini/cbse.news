@@ -5,6 +5,9 @@ import { Metadata } from 'next';
 import { generateSEOMetadata } from '@/components/SEO';
 import type { NewsCategory } from '@/lib/database.types';
 
+/** ISR: revalidate category listing every 5 minutes */
+export const revalidate = 300;
+
 interface PageProps {
   params: Promise<{ category: string }>;
 }

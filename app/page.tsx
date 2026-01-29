@@ -4,6 +4,9 @@ import Pagination from '@/components/Pagination';
 import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
+/** ISR: revalidate home page every 5 minutes */
+export const revalidate = 300;
+
 export async function generateMetadata({
   searchParams,
 }: {
@@ -72,8 +75,8 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           </div>
         ) : (
           <>
-            {/* News Cards List */}
-            <div className="space-y-2.5">
+            {/* Editorial news list */}
+            <div>
               {result.data.map((item, index) => (
                 <NewsListItem key={item.id} news={item} priority={index < 3} />
               ))}

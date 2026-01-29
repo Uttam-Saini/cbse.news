@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { format } from 'date-fns';
-import Link from 'next/link';
 import type { News } from '@/lib/database.types';
 
 interface DocumentLayoutProps {
@@ -39,73 +38,47 @@ export default function DocumentLayout({
         </div>
       </header>
 
-      {/* Document Preview Section */}
-      <div className="mb-8">
-        {/* Source Link - Primary CTA for documents */}
-        {news.source_link && getSourceHeading(news.source_link) && (
-          <div className="mb-6 p-5 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-900 dark:to-slate-900 border border-blue-200 dark:border-slate-800 rounded-xl">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0">
-                <svg
-                  className="w-8 h-8 text-blue-600 dark:text-blue-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <div className="flex-1">
-                <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 uppercase tracking-wide mb-2">
-                  {getSourceHeading(news.source_link)}
-                </p>
-                <a
-                  href={news.source_link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm shadow-md hover:shadow-lg"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg>
-                  {getSourceButtonLabel(news.source_link)}
-                </a>
-              </div>
-            </div>
-          </div>
-        )}
+      {/* Featured Image - Document preview, tall/portrait optimized */}
+      {news.image_url && (
+        <div className="relative w-full max-w-md mx-auto aspect-[3/4] mb-8 rounded-xl overflow-hidden bg-gray-100 dark:bg-slate-950 shadow-lg dark:shadow-none border-2 border-gray-200 dark:border-slate-800">
+          <Image
+            src={news.image_url}
+            alt={`${news.title} - Document Preview`}
+            fill
+            className="object-contain object-center w-full h-full"
+            priority
+            sizes="(max-width: 768px) 100vw, 448px"
+          />
+        </div>
+      )}
 
-        {/* Document Preview Image - Tall/portrait optimized */}
-        {news.image_url && (
-          <div className="relative w-full max-w-md mx-auto aspect-[3/4] mb-6 rounded-xl overflow-hidden bg-gray-100 dark:bg-slate-950 shadow-lg dark:shadow-none border-2 border-gray-200 dark:border-slate-800">
-            <Image
-              src={news.image_url}
-              alt={`${news.title} - Document Preview`}
-              fill
-              className="object-contain object-center w-full h-full"
-              priority
-              sizes="(max-width: 768px) 100vw, 448px"
-            />
-          </div>
-        )}
-      </div>
+      {/* Official link - directly below featured image */}
+      {news.source_link && getSourceHeading(news.source_link) && (
+        <div className="mb-8">
+          <a
+            href={news.source_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-blue-600 text-white px-6 py-3.5 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm shadow-sm hover:shadow-md"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+            {getSourceButtonLabel(news.source_link)}
+          </a>
+        </div>
+      )}
 
       {/* Article Content */}
       <div
